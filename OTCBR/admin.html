@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - OTCBR</title>
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/reg.css">
+  <link rel="stylesheet" href="src/admin.css">
+</head>
+<body>
+  <div id="app">
+    <nav class="top-nav">
+      <div class="nav-inner">
+        <div class="left">
+          <div class="logo">OTCBR</div>
+          <div class="nav-status offline"><span class="status-dot"></span><span class="status-text">Státusz</span></div>
+        </div>
+        <div class="center">
+          <div class="nav-links">
+            <a href="index.html#fooldal">Főoldal</a>
+            <a href="index.html#orarend">Órarend</a>
+            <a href="index.html#kapcsolat">Kapcsolat</a>
+          </div>
+        </div>
+        <div class="right">
+          <button id="nav-log" class="secondary" type="button">Log oldal</button>
+          <div class="nav-user-badge">Admin panel</div>
+        </div>
+      </div>
+    </nav>
+    <main class="page-shell admin-shell">
+      <header class="banner">
+        <div class="brand">
+          <span class="eyebrow">OTCBR ADMIN</span>
+          <h1>Felhasználókezelő panel</h1>
+          <p class="subtitle">Itt csak az admin látja a tanárok és diákok kezelését.</p>
+        </div>
+      </header>
+
+      <section class="admin-grid">
+        <article class="admin-card">
+          <div class="admin-form-header">
+            <h2 id="admin-form-title">Új felhasználó</h2>
+            <button id="admin-cancel-edit-btn" class="admin-cancel-edit-btn" type="button" style="display: none;" aria-label="Szerkesztes leallitasa">X</button>
+          </div>
+          <p class="small-muted" id="admin-form-desc">Az admin tud tanárt vagy diákot hozzáadni. A jelszó itt is titkosítva kerül a Retool API-ba.</p>
+          <form id="admin-user-form" class="admin-form">
+            <label>
+              Név
+              <input name="name" type="text" required placeholder="Teljes név">
+            </label>
+            <label>
+              E-mail
+              <input name="email" type="email" required placeholder="email@pelda.hu">
+            </label>
+            <label>
+              Telefonszám
+              <input name="phone" type="tel" placeholder="06 30 123 4567">
+            </label>
+            <label>
+              Születési dátum
+              <input name="birth" type="date">
+            </label>
+            <label id="admin-password-label">
+              Jelszó
+              <input name="password" type="password" required placeholder="Jelszó">
+            </label>
+            <label>
+              Szerepkör
+              <select name="role">
+                <option value="teacher">Tanár</option>
+                <option value="student">Diák</option>
+              </select>
+            </label>
+            <p id="admin-status" class="auth-status"></p>
+            <div class="auth-actions">
+              <button type="reset" class="secondary">Törlés</button>
+              <button type="submit" class="primary" id="admin-submit-btn">Mentés</button>
+              <button type="button" class="secondary" id="admin-open-btn" style="display: none;">Megnyitás</button>
+              <button type="button" class="secondary" id="admin-delete-btn" style="display: none;">Felhasználó törlése</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="admin-card">
+          <div class="admin-header-row">
+            <h2>Felhasználók</h2>
+            <button id="admin-logout" class="secondary" type="button">Kijelentkezés</button>
+          </div>
+          <p id="admin-session" class="small-muted"></p>
+          <input 
+            id="admin-search" 
+            type="text" 
+            placeholder="Keresés név vagy email alapján..." 
+            class="admin-search"
+          >
+          <div id="admin-list" class="admin-list"></div>
+          <p id="admin-search-info" class="small-muted" style="margin-top: 8px; text-align: center;"></p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Edit User Modal -->
+    <div id="edit-modal" class="auth-modal" style="display: none;">
+      <div class="auth-card">
+        <div class="modal-header">
+          <h2>Felhasználó szerkesztése</h2>
+          <button id="edit-close" class="modal-close" type="button">✕</button>
+        </div>
+        <form id="edit-user-form" class="admin-form">
+          <label>
+            Név
+            <input id="edit-name" name="name" type="text" required placeholder="Teljes név">
+          </label>
+          <label>
+            E-mail
+            <input id="edit-email" name="email" type="email" required placeholder="email@pelda.hu">
+          </label>
+          <label>
+            Telefonszám
+            <input id="edit-phone" name="phone" type="tel" placeholder="06 30 123 4567">
+          </label>
+          <label>
+            Születési dátum
+            <input id="edit-birth" name="birth" type="date">
+          </label>
+          <label>
+            Jelszó (hagyja üresen a jelenlegi meghagyásához)
+            <input id="edit-password" name="password" type="password" placeholder="Új jelszó (opcionális)">
+          </label>
+          <label>
+            Szerepkör
+            <select id="edit-role" name="role">
+              <option value="teacher">Tanár</option>
+              <option value="student">Diák</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+          <p id="edit-status" class="auth-status"></p>
+          <div class="auth-actions">
+            <button type="button" class="secondary" id="edit-cancel">Mégse</button>
+            <button type="submit" class="primary">Mentés</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/admin.js"></script>
+</body>
+</html>

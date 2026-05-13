@@ -1,0 +1,65 @@
+.log-shell {
+  overflow: visible;
+}
+
+.log-card {
+  margin: 24px 56px 48px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(118, 79, 191, 0.12);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(113, 70, 191, 0.1);
+}
+
+.log-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.log-header-row h2 {
+  margin: 0;
+  color: var(--accent-dark);
+}
+
+.log-search {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(118, 79, 191, 0.14);
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.log-list {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.log-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.6fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 242, 255, 0.92));
+  border: 1px solid rgba(118, 79, 191, 0.08);
+}
+
+@media (max-width: 900px) {
+  .log-card {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .log-row {
+    grid-template-columns: 1fr;
+  }
+}

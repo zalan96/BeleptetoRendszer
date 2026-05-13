@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log - OTCBR</title>
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/reg.css">
+  <link rel="stylesheet" href="src/log.css">
+</head>
+<body>
+  <div id="app">
+    <nav class="top-nav">
+      <div class="nav-inner">
+        <div class="left">
+          <div class="logo">OTCBR</div>
+          <div class="nav-status offline"><span class="status-dot"></span><span class="status-text">Státusz</span></div>
+        </div>
+        <div class="center">
+          <div class="nav-links">
+            <a href="index.html#fooldal">Főoldal</a>
+            <a href="admin.html">Admin</a>
+            <a href="log.html">Log</a>
+          </div>
+        </div>
+        <div class="right">
+          <button id="log-back" class="secondary" type="button">Vissza adminra</button>
+          <button id="log-logout" class="primary" type="button">Kijelentkezés</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-shell log-shell">
+      <header class="banner">
+        <div class="brand">
+          <span class="eyebrow">OTCBR LOG</span>
+          <h1>Belépési napló</h1>
+          <p class="subtitle">Csak a tanár és admin belépések jelennek meg.</p>
+        </div>
+      </header>
+
+      <section class="log-card">
+        <div class="log-header-row">
+          <h2>Naplóbejegyzések</h2>
+          <button id="log-clear" class="secondary" type="button">Napló ürítése</button>
+        </div>
+        <input id="log-search" class="log-search" type="text" placeholder="Keresés név vagy email alapján...">
+        <p id="log-count" class="small-muted"></p>
+        <div id="log-list" class="log-list"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="src/log.js"></script>
+</body>
+</html>
