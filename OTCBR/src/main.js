@@ -1,60 +1,59 @@
 import './style.css'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.js'
+import danceIcon from './assets/dance.svg'
 
 document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+<main class="page-shell">
+  <header class="banner">
+    <div class="brand">
+      <span class="eyebrow">OTCBR</span>
+      <h1>OTCBR - A hivatalos Oktogon Tánc Centrum Beléptető Rendszer</h1>
+      <p class="subtitle">Üdvözlünk az Oktogon Tánc Centrumban. Ez a főoldal a beléptető alkalmazás részleteit mutatja.</p>
+    </div>
+    <img class="hero-image" src="${danceIcon}" alt="Táncos illusztráció" />
+  </header>
 
-<div class="ticks"></div>
+  <section class="cta-panel">
+    <div class="buttons">
+      <button id="login" class="primary">Bejelentkezés</button>
+      <button id="contact" class="secondary">Elérhetőségek</button>
+    </div>
+    <div class="school-info">
+      <div>
+        <h2>Oktogon Tánc Centrum</h2>
+        <p>Stílus: lila, világoslila és elegáns táncos atmoszféra.</p>
+      </div>
+      <div class="team">
+        <h3>Csapat</h3>
+        <p>ANNA / BENCE / CSABA</p>
+      </div>
+    </div>
+  </section>
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+  <section class="details">
+    <article>
+      <h2>Beléptető rendszer</h2>
+      <p>A beléptetési felület az iskolai projekt keretében készült. A cél, hogy a táncosok és oktatók egyszerűen tudjanak belépni a rendszerbe.</p>
+      <ul>
+        <li>Bejelentkezés gomb a gyors hozzáféréshez</li>
+        <li>Elérhetőségek részletes linkkel</li>
+        <li>Projekt neve és fájl hivatkozások egyértelműen megjelenítve</li>
+      </ul>
+    </article>
 
-<div class="ticks"></div>
-<section id="spacer"></section>
+    <aside class="links">
+      <h3>Linkek és hivatkozások</h3>
+      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/OktogonTancCentrum" target="_blank" rel="noreferrer">Oktogon Tánc Centrum Facebook</a></p>
+      <p><strong>Fájlok:</strong> <code>index.html</code>, <code>src/main.js</code>, <code>src/style.css</code></p>
+      <p><strong>Projekt:</strong> OTCBR - A hivatalos Oktogon Tánc Centrum Beléptető Rendszer</p>
+    </aside>
+  </section>
+</main>
 `
 
-setupCounter(document.querySelector('#counter'))
+document.querySelector('#login').addEventListener('click', () => {
+  alert('Bejelentkezés gomb megnyomva. A beléptető rendszer hamarosan aktiválva lesz.');
+})
+
+document.querySelector('#contact').addEventListener('click', () => {
+  window.location.href = 'mailto:info@oktogon-tanc.hu'
+})

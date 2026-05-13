@@ -1,0 +1,15 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Táncos illusztráció</title>
+  <desc id="desc">Stylized dancer figure in purple tones for Oktogon Tánc Centrum.</desc>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bd8dff" />
+      <stop offset="100%" stop-color="#7f4cff" />
+    </linearGradient>
+  </defs>
+  <circle cx="260" cy="104" r="36" fill="url(#gradient)" />
+  <path d="M182 144c-20 26-24 62-12 96 12 34 44 58 78 68 10 3 18 4 29 4 30 0 62-14 80-36 18-22 20-52 10-80l-13-32-35 24c-18 12-38 22-58 18-18-4-34-18-46-32-12-14-18-28-23-38z" fill="url(#gradient)" opacity="0.95" />
+  <path d="M148 304c-10 22-14 44-12 66 4 42 26 74 56 96 20 14 44 20 70 18 26-2 54-14 76-34 22-20 36-46 42-74 3-16 3-30 0-44l-6-28-44 16a152 152 0 0 1-38 10c-22 2-44-2-64-14-16-10-30-24-40-40l-14 6z" fill="#ebddff" />
+  <path d="M312 232l58-44 30 18-58 44-30-18z" fill="#fff" opacity="0.7" />
+  <path d="M112 354c10 18 26 34 44 46l-4 16c-22-10-42-26-56-46-10-14-16-28-18-42l16 2z" fill="#d7c0ff" />
+</svg>
