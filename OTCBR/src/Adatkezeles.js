@@ -1,4 +1,5 @@
 import  './User.js'
+import './IdGeneration.js'
 
 export class Adatkezeles {
   constructor(apiUrl = 'https://retoolapi.dev/vxsfdG/data') {
@@ -265,4 +266,8 @@ export class Adatkezeles {
   getAdatById(id) {
     return this.adatok.find(item => item.id === id)
   }
+
+
+
 }
+
