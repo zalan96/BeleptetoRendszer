@@ -1,8 +1,10 @@
 import './style.css'
 import './reg.css'
+import './schedule.css'
 import danceIcon from './assets/dance.svg'
 import  './User.js'
 import { Adatkezeles } from './Adatkezeles.js'
+import { ScheduleManager } from './schedule.js'
 
 // Adatkezelés inicializálása
 const adatkezeles = new Adatkezeles()
@@ -59,8 +61,6 @@ function appendLoginLog(user) {
 
 
 
-
-
 document.querySelector('#app').innerHTML = `
 <main id="fooldal" class="page-shell">
   <header class="banner">
@@ -75,8 +75,8 @@ document.querySelector('#app').innerHTML = `
   <section id="orarend" class="cta-panel">
     <div class="mini-schedule">
       <div class="schedule-title">
-        <strong>Órarend</strong>
-        <span class="small-muted"> — még nincs adat</span>
+        <strong>Rövid Órarend</strong>
+        <span class="small-muted"> — az órai létesítmény</span>
       </div>
       <div class="schedule-grid">
         <div class="day">Hétfő</div>
@@ -160,6 +160,12 @@ window.addEventListener('load', async () => {
   if (betoltottAdatok) {
     console.log('Kapcsolat sikeres, betöltött adatok:', betoltottAdatok)
   }
+
+  // Schedule Manager inicializálása és megjelenítése
+  const scheduleManager = new ScheduleManager('app')
+  scheduleManager.render()
+  scheduleManager.attachEventListeners()
+
   // Create a centered sticky navigation (logo + status left, links center, auth buttons right)
   const app = document.querySelector('#app')
   const nav = document.createElement('nav')
