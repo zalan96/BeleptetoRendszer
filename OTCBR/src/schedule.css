@@ -1,0 +1,332 @@
+/* Schedule Styles */
+.schedule-container {
+  padding: 40px 56px;
+  background: linear-gradient(180deg, rgba(248, 242, 255, 0.95), rgba(239, 228, 255, 0.9));
+  border-top: 1px solid rgba(118, 79, 191, 0.12);
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.schedule-header h2 {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 1.8rem;
+}
+
+.schedule-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.schedule-filter {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(127, 76, 255, 0.24);
+  background: white;
+  color: var(--accent-dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.schedule-filter:hover {
+  border-color: rgba(127, 76, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(127, 76, 255, 0.12);
+}
+
+.schedule-legend-toggle {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #8e4dff, #5d15c7);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.schedule-legend-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(128, 70, 223, 0.24);
+}
+
+/* Schedule Table */
+.schedule-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(113, 70, 191, 0.1);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.schedule-table thead {
+  background: linear-gradient(135deg, #7f4cff, #8e4dff);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.schedule-table th {
+  padding: 16px 12px;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(127, 76, 255, 0.2);
+}
+
+.schedule-table tbody tr {
+  border-bottom: 1px solid rgba(118, 79, 191, 0.1);
+  transition: background 0.2s ease;
+}
+
+.schedule-table tbody tr:hover {
+  background: rgba(248, 242, 255, 0.6);
+}
+
+.schedule-table td {
+  padding: 12px 8px;
+  text-align: center;
+  vertical-align: middle;
+  min-height: 100px;
+  border: 1px solid rgba(118, 79, 191, 0.08);
+}
+
+.schedule-table td:first-child {
+  background: linear-gradient(180deg, rgba(248, 242, 255, 0.8), rgba(243, 237, 255, 0.6));
+  font-weight: 700;
+  color: var(--accent-dark);
+  width: 80px;
+}
+
+/* Schedule Slots */
+.schedule-slot {
+  padding: 10px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  border: 2px solid transparent;
+}
+
+.slot-empty {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(250, 246, 255, 0.45));
+  border: 1.5px dashed rgba(127, 76, 255, 0.15);
+  color: var(--muted);
+  cursor: default;
+  font-weight: 600;
+}
+
+/* Dance Type Colors */
+.slot-latindance {
+  background: linear-gradient(135deg, #ff6b9d, #ff8fb3);
+  color: white;
+  border-color: #ff5a8a;
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.25);
+}
+
+.slot-waltz {
+  background: linear-gradient(135deg, #667eea, #764ce6);
+  color: white;
+  border-color: #5568d3;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.slot-tango {
+  background: linear-gradient(135deg, #f5576c, #ff6b7a);
+  color: white;
+  border-color: #f03d52;
+  box-shadow: 0 4px 12px rgba(245, 87, 108, 0.25);
+}
+
+.slot-salsa {
+  background: linear-gradient(135deg, #fa709a, #fee140);
+  color: #333;
+  border-color: #fd5280;
+  box-shadow: 0 4px 12px rgba(250, 112, 154, 0.25);
+}
+
+.slot-bachata {
+  background: linear-gradient(135deg, #30cfd0, #330867);
+  color: white;
+  border-color: #1fb3b5;
+  box-shadow: 0 4px 12px rgba(48, 207, 208, 0.25);
+}
+
+/* Slot Hover Effects */
+.schedule-slot:not(.slot-empty):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(127, 76, 255, 0.2) !important;
+}
+
+.schedule-slot strong {
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.slot-teacher {
+  font-weight: 600;
+  font-size: 0.8rem;
+  opacity: 0.95;
+}
+
+.slot-level {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* Legend */
+.schedule-legend {
+  background: linear-gradient(135deg, rgba(248, 242, 255, 0.9), rgba(239, 228, 255, 0.85));
+  border: 1px solid rgba(118, 79, 191, 0.16);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.schedule-legend.legend-hidden {
+  max-height: 40px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.schedule-legend.legend-hidden .legend-items {
+  display: none;
+}
+
+.legend-title {
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.legend-item-text {
+  font-weight: 600;
+  color: var(--accent-dark);
+  font-size: 0.95rem;
+}
+
+/* Info Box */
+.schedule-info {
+  background: rgba(156, 112, 255, 0.08);
+  border: 1px solid rgba(127, 76, 255, 0.18);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .schedule-container {
+    padding: 32px 24px;
+  }
+
+  .schedule-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-controls {
+    width: 100%;
+  }
+
+  .schedule-table td {
+    padding: 10px 6px;
+    min-height: 90px;
+    font-size: 0.8rem;
+  }
+
+  .schedule-slot {
+    padding: 8px 6px;
+    min-height: 70px;
+    gap: 4px;
+    font-size: 0.75rem;
+  }
+
+  .legend-items {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .schedule-container {
+    padding: 20px 16px;
+  }
+
+  .schedule-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px 4px;
+  }
+
+  .schedule-table td:first-child {
+    width: 60px;
+    font-size: 0.85rem;
+  }
+
+  .schedule-slot {
+    padding: 6px 4px;
+    min-height: 60px;
+    font-size: 0.7rem;
+  }
+
+  .slot-teacher,
+  .slot-level {
+    display: none;
+  }
+
+  .legend-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .schedule-info {
+    font-size: 0.8rem;
+  }
+}
